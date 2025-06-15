@@ -36,7 +36,18 @@
         </div>
         <div id="btnsCarrinho">
             <button class="btnCart" onclick="window.location.href='./produtos.html'">Continuar comprando</button>
-            <button class="btnCart">Finalizar Pedido</button>
+            <button class="btnCart" onclick="pagamento(0)">Finalizar Pedido</button>
+        </div>
+    </section>
+
+    <section id="pagamento">
+        <div id="boxPagamento">
+            <h1 id="valor">Seus produtos deram:</h1>
+            <div id="boxImgPagamento">
+                <img id="imgQRCODE" src="./../../Model/Frango.jpeg" alt="QrCode do Pix">
+            </div>
+            <h1 id="linkPagamento">Link do PIX</h1>
+            <button id="btnPagamento" onclick="pagamento(1)">Voltar ao Carrinho</button>
         </div>
     </section>
 

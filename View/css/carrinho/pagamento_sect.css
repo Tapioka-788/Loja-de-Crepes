@@ -1,0 +1,144 @@
+#pagamento h1 {
+    font-size: 1.5vw;
+}
+
+#pagamento button,
+p,
+i {
+    font-size: 1.5vh;
+}
+
+#pagamento {
+    width: 100vw;
+    height: 85vh;
+
+    position: absolute;
+    top: 10vh;
+    left: -100vw;
+
+    background-color: rgba(250, 250, 250, 0.4);
+}
+
+#boxPagamento {
+    width: 60vw;
+    height: 70vh;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border: solid #e3e3e3 1vh;
+
+    -webkit-border-radius: 1vw;
+    -moz-border-radius: 1vw;
+    border-radius: 1vw;
+
+    background-color: rgb(250, 250, 250);
+}
+
+#boxImgPagamento {
+    width: 15vw;
+    height: 15vw;
+}
+
+#imgQRCODE {
+    width: 15vw;
+    height: 15vw;
+}
+
+#btnPagamento {
+    width: 7vw;
+    height: 5vh;
+
+    -webkit-border-radius: 1vw;
+    -moz-border-radius: 1vw;
+    border-radius: 1vw;
+
+    border: none;
+    background-color: rgb(234, 29, 44);
+    color: white;
+}
+
+#btnPagamento:hover {
+    cursor: pointer;
+
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+#linkPagamento {
+    color: #007bff; /* azul estilo link */
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+#linkPagamento:hover {
+    color: #0056b3; /* tom mais escuro no hover */
+    text-decoration: none;
+}
+
+
+@media screen and
+/* (min-width: 300px), */
+(max-width: 480px) {
+
+    #pagamento {
+        width: 100vw;
+    }
+
+    #pagamento h1 {
+        font-size: 4.5vw;
+    }
+
+    #pagamento button,
+    p,
+    i {
+        font-size: 1.3vh;
+    }
+
+    #boxPagamento {
+        width: 80vw;
+    }
+
+    #boxImgPagamento {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    #imgQRCODE {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    #btnPagamento {
+        width: 17vw;
+        height: 5vh;
+
+        -webkit-border-radius: 1vw;
+        -moz-border-radius: 1vw;
+        border-radius: 1vw;
+    }
+}
+
+
+/* <section id="pagamento">
+        <div id="boxPagamento">
+            <h1 id="valor">Seus produtos deram:</h1>
+            <div id="boxImgPagamento">
+                <img id="imgQRCODE" src="" alt="QrCode do Pix">
+            </div>
+            <h1 id="linkPagamento">Link do PIX</h1>
+            <button id="btnPagamento" onclick="pagamento(1)">Voltar ao Carrinho</button>
+        </div>
+    </section> */
