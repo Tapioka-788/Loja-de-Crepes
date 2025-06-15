@@ -223,6 +223,7 @@ h1 {
         display: flex;
 
         padding-left: 1vw;
+        padding-bottom: 1vh;
     }
 
     section h1 {
