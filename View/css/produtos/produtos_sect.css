@@ -172,9 +172,10 @@ h1 {
     transform: scale(1.01);
 }
 
+@media screen and
+/* (min-width: 300px), */
+(max-width: 480px) {
 
-@media screen and (max-width: 480px),
-(max-height: 882px) {
     section {
         width: 100vw;
     }

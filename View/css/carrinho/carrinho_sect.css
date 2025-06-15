@@ -197,3 +197,122 @@ section {
     -o-transform: scale(1.01);
     transform: scale(1.01);
 }
+
+@media screen and
+/* (min-width: 300px), */
+(max-width: 480px) {
+    
+    section {
+        width: 100vw;
+    }
+
+    #showCarrinho {
+        width: 100vw;
+        height: 50vh;
+        margin: 0 auto;
+        padding: 1vw;
+
+        display: -ms-grid;
+        display: -moz-grid;
+        display: -webkit-grid;
+        display: grid;
+
+        gap: 6vw;
+        grid-template-columns: repeat(2, 40vw);
+        justify-content: center;
+
+        overflow-y: scroll;
+    }
+
+    #sectionCart {
+        height: 80%;
+    }
+
+    #textAnuncio {
+        align-items: center;
+        padding: 1vw;
+        width: 80vw;
+    }
+
+    .cartao {
+        width: 40vw;
+        height: 20vh;
+
+        -webkit-border-radius: 0.5vw;
+        -moz-border-radius: 0.5vw;
+        border-radius: 0.5vw;
+        border: solid rgba(62, 62, 62, 0.1) 0.01vw;
+
+        background-color: rgb(250, 250, 250);
+        color: #3e3e3e;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        padding-left: 1vw;
+    }
+
+    section h1 {
+        font-size: 4.5vw;
+    }
+
+    section button,
+    p,
+    i {
+        font-size: 1.3vh;
+    }
+
+    #nomeDesc {
+        width: 18vw;
+        padding-right: 2vw;
+        height: 20vh;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+    }
+
+    #imgBtn {
+        width: 20vw;
+        height: 20vh;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+    }
+
+    #imgCartao {
+        width: 20vw;
+        height: 15vh;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+    }
+
+    #foto {
+        width: 20vw;
+        height: 12.5vh;
+    }
+
+    #btnsCarrinho {
+        display: flex;
+        justify-content: space-around;
+        width: 60vw;
+        height: 17vh;
+
+    }
+
+    .btnCart {
+        height: 5vh;
+        width: 17vw;
+    }
+
+
+}

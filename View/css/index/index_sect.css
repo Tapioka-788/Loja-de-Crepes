@@ -10,7 +10,7 @@ section {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -48,10 +48,21 @@ section {
     background-color: gray;
 }
 
-#banner1 { background-color: red; }
-#banner2 { background-color: yellow; }
-#banner3 { background-color: blue; }
-#banner4 { background-color: green; }
+#banner1 {
+    background-color: red;
+}
+
+#banner2 {
+    background-color: yellow;
+}
+
+#banner3 {
+    background-color: blue;
+}
+
+#banner4 {
+    background-color: green;
+}
 
 #btns_banners {
     width: 40vw;
@@ -62,7 +73,7 @@ section {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    
+
     justify-content: space-evenly;
     align-items: center;
 
@@ -175,7 +186,7 @@ section {
     -ms-transform: scale(1.01);
     -o-transform: scale(1.01);
     transform: scale(1.01);
-    
+
     cursor: pointer;
 }
 
@@ -216,66 +227,79 @@ section {
 
     cursor: pointer;
 }
-@media screen and (max-width: 480px), (max-height: 882px) {
-    section{
+
+@media screen and
+/* (min-width: 300px), */
+(max-width: 480px) {
+
+    section {
         width: 100vw;
     }
 
     #boxInputs {
-    width: 80vw;
-    height: 21vh;
+        width: 80vw;
+        height: 21vh;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
+    .inputLogin {
+        width: 50vw;
+        height: 5vh;
 
-.inputLogin {
-    width:50vw;
-    height: 5vh;
+        border: #3e3e3e solid 0.01vw;
 
-    border: #3e3e3e solid 0.01vw;
+        -webkit-border-radius: 1vw;
+        -moz-border-radius: 1vw;
+        border-radius: 1vw;
 
-    -webkit-border-radius: 1vw;
-    -moz-border-radius: 1vw;
-    border-radius: 1vw;
-
-    padding: 0vh 1vw;
-}
+        padding: 0vh 1vw;
+    }
 
 
-#boxBtnsLogin {
-    width: 40vw;
-    height: 7vh;
+    #boxBtnsLogin {
+        width: 40vw;
+        height: 7vh;
 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
 
-    justify-content: space-evenly;
-    align-items: center;
-}
+        justify-content: space-evenly;
+        align-items: center;
+    }
 
-.loginBtns {
-    width: 17vw;
-    height: 5vh;
+    .loginBtns {
+        width: 17vw;
+        height: 5vh;
 
-    -webkit-border-radius: 1vw;
-    -moz-border-radius: 1vw;
-    border-radius: 1vw;
+        -webkit-border-radius: 1vw;
+        -moz-border-radius: 1vw;
+        border-radius: 1vw;
 
-    border: none;
+        border: none;
 
-    background-color: rgb(234, 29, 44);
-    color: white;
-}
+        background-color: rgb(234, 29, 44);
+        color: white;
+    }
+
+    .banner {
+        height: 50vh;
+    }
+
+    #banners {
+
+        height: 50vh;
+
+    }
 
 }
