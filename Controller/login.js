@@ -10,6 +10,7 @@ let telaCad = document.getElementById('login')
 
 export function escondeTelaCad() {
     telaCad.style.left = '-100vw'
+    // telaCad.style.left = '00vw'
 }
 
 export function mostraTelaCad() {

@@ -40,7 +40,7 @@ section {
 
 .banner {
     width: 70vw;
-    height: 30vh;
+    height: 40vh;
 
     margin: 0vh 15vw;
 
@@ -130,7 +130,7 @@ section {
 }
 
 #boxLogin {
-    width: 40vw;
+    width: 60vw;
     height: 30vh;
 
     display: -webkit-box;
@@ -153,7 +153,7 @@ section {
 }
 
 #boxInputs {
-    width: 40vw;
+    width: 50vw;
     height: 21vh;
 
     display: -webkit-box;
@@ -168,7 +168,7 @@ section {
 }
 
 .inputLogin {
-    width: 25vw;
+    width: 50vw;
     height: 5vh;
 
     border: #3e3e3e solid 0.01vw;
@@ -236,6 +236,22 @@ section {
         width: 100vw;
     }
 
+    .banner {
+        height: 50vh;
+    }
+
+    #banners {
+        height: 50vh;
+    }
+
+    #login {
+        width: 100vw;
+    }
+
+    #boxLogin {
+        width: 80vw;
+    }
+
     #boxInputs {
         width: 80vw;
         height: 21vh;
@@ -251,7 +267,7 @@ section {
     }
 
     .inputLogin {
-        width: 50vw;
+        width: 70vw;
         height: 5vh;
 
         border: #3e3e3e solid 0.01vw;
@@ -265,7 +281,7 @@ section {
 
 
     #boxBtnsLogin {
-        width: 40vw;
+        width: 60vw;
         height: 7vh;
 
         display: -webkit-box;
@@ -292,14 +308,19 @@ section {
         color: white;
     }
 
-    .banner {
-        height: 50vh;
-    }
+    /* 
+        <section id="login">
+        <div id="boxLogin">
+            <div id="boxInputs">
+                <input class="inputLogin" id="nomeAdd" type="text" placeholder="Nome do Aluno">
+                <input class="inputLogin" id="turmaAdd" type="text" placeholder="Numero da chamada">
+                <input class="inputLogin" id="nChamadaAdd" type="text" placeholder="Turma e curso">
+            </div>
 
-    #banners {
-
-        height: 50vh;
-
-    }
-
+            <div id="boxBtnsLogin">
+                <button class="loginBtns" onclick="limparDadosLogin()">Limpar</button>
+                <button class="loginBtns" onclick="recolheDadosLogin()">Confirmar</button>
+            </div>
+        </div>
+    </section> */
 }

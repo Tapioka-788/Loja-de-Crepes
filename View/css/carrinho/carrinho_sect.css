@@ -201,14 +201,14 @@ section {
 @media screen and
 /* (min-width: 300px), */
 (max-width: 480px) {
-    
-    section {
+
+    #sectionCart {
         width: 100vw;
     }
 
     #showCarrinho {
         width: 100vw;
-        height: 50vh;
+        height: 75vh;
         margin: 0 auto;
         padding: 1vw;
 
@@ -222,10 +222,6 @@ section {
         justify-content: center;
 
         overflow-y: scroll;
-    }
-
-    #sectionCart {
-        height: 80%;
     }
 
     #textAnuncio {
@@ -255,11 +251,11 @@ section {
         padding-left: 1vw;
     }
 
-    section h1 {
-        font-size: 4.5vw;
+    #sectionCart h1 {
+        font-size: 3vw;
     }
 
-    section button,
+    #sectionCart button,
     p,
     i {
         font-size: 1.3vh;
@@ -302,16 +298,18 @@ section {
     }
 
     #btnsCarrinho {
-        display: flex;
-        justify-content: space-around;
         width: 60vw;
         height: 17vh;
 
     }
 
     .btnCart {
-        height: 5vh;
         width: 17vw;
+        height: 5vh;
+
+        -webkit-border-radius: 1vw;
+        -moz-border-radius: 1vw;
+        border-radius: 1vw;
     }
 
 
