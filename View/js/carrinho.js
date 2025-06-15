@@ -7,7 +7,7 @@ export async function criarCarrinho() {
     const sectionProduts = document.getElementById("sectionCart");
     const statusCarrinho = document.getElementById("statusCarrinho");
 
-    sectionCartoes.innerHTML = ""
+    sectionCartoes.innerHTML = "";
 
     const carrinhos = await pegarPedidos();
     const produtos = await pegarCartoes();
@@ -44,6 +44,9 @@ export async function criarCarrinho() {
         statusCarrinho.textContent = `Você tem ${carrinhosUsuario.length} itens em seu carrinho.`;
     }
 
+    // Criando os cartões e somando os valores
+    let total = 0;
+
     for (const carrinho of carrinhosUsuario) {
         const produto = produtos.find(p => p.id === carrinho.produtoId);
 
@@ -78,7 +81,6 @@ export async function criarCarrinho() {
 
         const img = document.createElement("img");
         img.id = "foto";
-        // img.src = produto.imgSrc;
         img.src = "./../../Model/" + produto.imgSrc + ".jpeg";
         img.alt = produto.nome;
 
@@ -87,7 +89,6 @@ export async function criarCarrinho() {
         const botao = document.createElement("button");
         botao.id = "delCarrinho";
         botao.addEventListener("click", () => removerDoCarrinho(produto));
-        // botao.textContent = "Remover do Carrinho";
 
         const ibotao = document.createElement("i");
         ibotao.id = "ibotao";
@@ -106,7 +107,21 @@ export async function criarCarrinho() {
         sectionCartoes.appendChild(cartao);
 
         console.log("Produto adicionado ao carrinho:", produto.nome);
+
+        // Somando o valor
+        const precoNumerico = parseFloat(produto.preco);
+        if (!isNaN(precoNumerico)) {
+            console.log(`Somando R$ ${precoNumerico} do produto: ${produto.nome}`);
+            total += precoNumerico;
+        } else {
+            console.warn(`Preço inválido para produto: ${produto.nome} -> "${produto.preco}"`);
+        }
     }
 
+    console.log("Total final calculado:", total);
+
     sectionProduts.style.height = "90vh";
+
+    const valorTotalElement = document.getElementById("valor");
+    valorTotalElement.textContent = `Seus produtos deram: R$ ${total.toFixed(2).replace('.', ',')}`;
 }
