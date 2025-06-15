@@ -10,3 +10,15 @@ export function pagamento(numeroTela) {
         console.log("Fechou a tela de pagamento")
     }
 }
+
+export function copiarLinkPix() {
+    const linkPix = "https://seu-link-do-pix.com"; // substitua pelo link real
+
+    navigator.clipboard.writeText(linkPix)
+        .then(() => {
+            alert("Link copiado para a área de transferência!");
+        })
+        .catch(err => {
+            console.error("Erro ao copiar o link:", err);
+        });
+}
