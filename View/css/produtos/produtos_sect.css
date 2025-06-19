@@ -145,7 +145,7 @@ h1 {
 
     -webkit-border-radius: 1vw;
     -moz-border-radius: 1vw;
-    border-radius: 1vw;
+    border-radius: 0.5vw;
 
     border: none;
     background-color: rgb(234, 29, 44);

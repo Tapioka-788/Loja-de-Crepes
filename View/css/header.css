@@ -61,7 +61,7 @@ header,
 
     -webkit-border-radius: 1vw;
     -moz-border-radius: 1vw;
-    border-radius: 1vw;
+    border-radius: 0.5vw;
 
     border: none;
 
