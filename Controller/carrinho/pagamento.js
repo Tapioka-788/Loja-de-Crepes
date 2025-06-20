@@ -1,4 +1,6 @@
 let pagamentoSect = document.getElementById("pagamento");
+let comprovante = document.getElementById("comprovante");
+
 let sectionCart = document.getElementById('sectionCart')
 
 export function pagamento(numeroTela) {
@@ -8,6 +10,75 @@ export function pagamento(numeroTela) {
     } else if (numeroTela == 1) {
         pagamentoSect.style.left = '-' + numeroTela + '00vw'
         console.log("Fechou a tela de pagamento")
+    } else if (numeroTela == 2) {
+        comprovante.style.left = '-' + 0 + '00vw'
+        console.log("Abriu a tela de comprovante")
+    } else if (numeroTela == 3) {
+        comprovante.style.left = '-' + 1 + '00vw'
+        console.log("Fechou a tela de comprovante")
+    } else if (numeroTela == 4) {
+        comprovante.style.left = '-100vw';
+        console.log("Fechou a tela de comprovante e salvou no bd");
+
+        // 1. Resgatar carrinho do usuário logado
+        const bdProprio = JSON.parse(localStorage.getItem('bdProprio')) || [];
+        const usuarioLogado = bdProprio.length > 0 ? bdProprio[0].nome : null;
+
+        if (!usuarioLogado) {
+            console.error("Nenhum usuário logado encontrado.");
+            return;
+        }
+
+        // 2. Resgatar pedidos e produtos
+        import("./../../Controller/services/produtos_S.js").then(async ({ pegarPedidos, pegarCartoes }) => {
+            const carrinhos = await pegarPedidos();
+            const produtos = await pegarCartoes();
+
+            // 3. Filtrar carrinho do usuário
+            const carrinhosUsuario = carrinhos.filter(c => c.usuario.nomeUx === usuarioLogado);
+
+            // 4. Mapear os produtos do carrinho
+            const produtosDoCarrinho = carrinhosUsuario.map(c => {
+                const produto = produtos.find(p => p.id === c.produtoId);
+                return produto ? {
+                    nome: produto.nome,
+                    preco: parseFloat(produto.preco)
+                } : null;
+            }).filter(p => p !== null);
+
+            const total = produtosDoCarrinho.reduce((acc, p) => acc + p.preco, 0);
+
+            // 5. Resgatar comprovante
+            const inputFile = document.getElementById("inputComprovante");
+            const arquivo = inputFile.files[0];
+
+            if (!arquivo) {
+                alert("⚠️ Nenhum comprovante foi selecionado. Por favor, envie o comprovante antes de concluir o pagamento.");
+                console.warn("Nenhum comprovante foi selecionado.");
+                return;
+            }
+
+            const leitor = new FileReader();
+            leitor.onload = function () {
+                const base64 = leitor.result;
+
+                // 6. Exibir tudo no console
+                console.log("----- RESUMO DO PAGAMENTO -----");
+                console.log("Usuário:", usuarioLogado);
+                console.log("Produtos:");
+                produtosDoCarrinho.forEach(p => {
+                    console.log(`- ${p.nome} | R$ ${p.preco.toFixed(2).replace('.', ',')}`);
+                });
+                console.log("Valor Total:", `R$ ${total.toFixed(2).replace('.', ',')}`);
+                console.log("Comprovante (base64):", base64);
+                console.log("--------------------------------");
+
+                // 7. Notificação de sucesso
+                alert("✅ Compra concluída com sucesso!");
+            };
+
+            leitor.readAsDataURL(arquivo);
+        });
     }
 }
 
