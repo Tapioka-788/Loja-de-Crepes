@@ -47,7 +47,12 @@
                 <img id="imgQRCODE" src="./../../Model/QrCodeALeatorrio.jpg" alt="QrCode do Pix">
             </div>
             <h1 id="linkPagamento" onclick="copiarLinkPix()">Link do PIX</h1>
-            <button id="btnPagamento" onclick="pagamento(1)">Voltar ao Carrinho</button>
+            <div id="boxBtnPagamento">
+                <button id="btnPagamento" onclick="pagamento(1)">Voltar ao Carrinho</button>
+                <button id="btnPagamento" onclick="pagamento(1)">Confirmar Pagamento</button>
+                <!-- Adicionar ao confirmar pagamento um campo para inserir o Comprovante, ao inserir o Comprovante e apertar
+                em "ok" salvar o carrinho em um bd proprio que sera usado/ resgatado no visualizador -->
+            </div>
         </div>
     </section>
 
