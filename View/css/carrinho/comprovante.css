@@ -11,7 +11,7 @@ i {
 #comprovante input {
     width: 15vw;
     height: 2vh;
-/* 
+    /* 
     border: #3e3e3e solid 0.01vw; */
 
     -webkit-border-radius: 1vw;
@@ -69,6 +69,36 @@ i {
     align-items: center;
 }
 
+#inputComprovante {
+    display: none;
+}
+
+#labelInputComprovante {
+    /* width: 7vw;
+    height: 3vh; */
+
+    -webkit-border-radius: 1vw;
+    -moz-border-radius: 1vw;
+    border-radius: 0.5vw;
+
+    padding: 1vh 1vw;
+
+    border: none;
+    background-color: rgb(234, 29, 44);
+    color: white;
+}
+
+#labelInputComprovante:hover,
+#btnComprovante:hover {
+    cursor: pointer;
+
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
 #btnComprovante {
     width: 7vw;
     height: 5vh;
@@ -82,12 +112,65 @@ i {
     color: white;
 }
 
-#btnComprovante:hover {
-    cursor: pointer;
+@media screen and
+/* (min-width: 300px), */
+(max-width: 480px) {
 
-    -webkit-transform: scale(1.01);
-    -moz-transform: scale(1.01);
-    -ms-transform: scale(1.01);
-    -o-transform: scale(1.01);
-    transform: scale(1.01);
+    #comprovante {
+        width: 100vw;
+    }
+
+    #comprovante h1 {
+        font-size: 4.5vw;
+    }
+
+    #comprovante button,
+    p,
+    i {
+        font-size: 1.3vh;
+    }
+
+    #boxComprovante {
+        width: 80vw;
+    }
+
+    #labelInputComprovante {
+        width: 30vw;
+        height: 3vh;
+
+        font-size: 1.75vh;
+
+        -webkit-border-radius: 1vw;
+        -moz-border-radius: 1vw;
+        border-radius: 1vw;
+    }
+
+    #btnComprovante {
+        width: 17vw;
+        height: 5vh;
+
+        -webkit-border-radius: 1vw;
+        -moz-border-radius: 1vw;
+        border-radius: 1vw;
+    }
+
+    #boxBtnComprovante {
+        width: 60vw;
+        height: 17vh;
+
+    }
 }
+
+/*
+    <section id="comprovante">
+        <div id="boxComprovante">
+            <h1 id="confirmacao">Vamos confirmar seu pedido agora !</h1>
+            <label for="inputComprovante" id="labelInputComprovante">Selecionar imagem</label>
+            <input type="file" accept="image/*" id="inputComprovante">
+            <div id="boxBtnComprovante">
+                <button id="btnComprovante" onclick="pagamento(3)">Cancelar</button>
+                <button id="btnComprovante" onclick="pagamento(4)">Pagamento Concluido</button>
+            </div>
+        </div>
+    </section>
+*/
