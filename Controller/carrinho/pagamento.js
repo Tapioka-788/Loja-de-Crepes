@@ -59,24 +59,67 @@ export function pagamento(numeroTela) {
             }
 
             const leitor = new FileReader();
-            leitor.onload = function () {
+            leitor.onload = async function () {
                 const base64 = leitor.result;
 
-                // 6. Exibir tudo no console
-                console.log("----- RESUMO DO PAGAMENTO -----");
-                console.log("Usuário:", usuarioLogado);
-                console.log("Produtos:");
-                produtosDoCarrinho.forEach(p => {
-                    console.log(`- ${p.nome} | R$ ${p.preco.toFixed(2).replace('.', ',')}`);
-                });
-                console.log("Valor Total:", `R$ ${total.toFixed(2).replace('.', ',')}`);
-                console.log("Comprovante (base64):", base64);
-                console.log("--------------------------------");
+                const produtosFormatados = produtosDoCarrinho.map(p => ({
+                    produto: p.nome,
+                    valor: p.preco.toFixed(2)
+                }));
 
-                // 7. Notificação de sucesso
-                alert("✅ Compra concluída com sucesso!");
+                try {
+                    const response = await fetch("https://back-end-crepes.vercel.app/comprovantes", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            nomeUx: usuarioLogado,
+                            comprovante: base64,
+                            produtos: produtosFormatados
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.mensagem?.includes("sucesso")) {
+                        alert("✅ Compra concluída e comprovante enviado!");
+
+                        // Limpar carrinho
+                        for (const item of carrinhosUsuario) {
+                            await fetch("https://back-end-crepes.vercel.app/usuarios", {
+                                method: "DELETE",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({
+                                    usuarioNome: usuarioLogado,
+                                    produtoId: item.produtoId
+                                })
+                            });
+                        }
+
+                        console.log("Carrinho do usuário foi limpo.");
+
+                        // Recriar os cartões do carrinho
+                        import("./../../View/js/carrinho_view.js").then(({ criarCarrinho }) => {
+                            criarCarrinho(); // Atualiza visualmente o carrinho
+                        });
+
+                        // Opcional: recarregar a página após 2 segundos
+                        setTimeout(() => {
+                            location.reload();
+                        }, 2000);
+
+                    } else {
+                        alert("❌ Houve um problema ao salvar seu comprovante.");
+                        console.error(data);
+                    }
+                } catch (err) {
+                    console.error("Erro ao enviar comprovante:", err);
+                    alert("❌ Erro ao enviar comprovante.");
+                }
             };
-
             leitor.readAsDataURL(arquivo);
         });
     }
