@@ -38,9 +38,14 @@ header,
 
     #loguinho {
         margin: 0vh 1vw;
-        width: 7vh;
-        height: 7vh;
-        background-color: black;
+        width: 9vh;
+        height: 9vh;
+        /* background-color: black; */
+    }
+
+    #fotoLogo {
+        width: 9vh;
+        height: 9vh;
     }
 
     h1 {
@@ -81,7 +86,7 @@ header,
     cursor: pointer;
 }
 
-@media screen and 
+@media screen and
 /* (min-width: 300px), */
 (max-width: 480px) {
     header {
@@ -97,7 +102,11 @@ header,
             margin: 0vh 1vw;
             width: 7vh;
             height: 7vh;
-            background-color: black;
+        }
+
+        #fotoLogo {
+            width: 7vh;
+            height: 7vh;
         }
 
         h1 {
