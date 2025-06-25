@@ -81,7 +81,7 @@ export async function criarCarrinho() {
 
         const img = document.createElement("img");
         img.id = "foto";
-        img.src = "./../../Model/" + produto.imgSrc + ".jpeg";
+        img.src = "./../../Model/" + produto.imgSrc;
         img.alt = produto.nome;
 
         imgCartao.appendChild(img);
