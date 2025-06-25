@@ -238,11 +238,11 @@ h1 {
     section button,
     p,
     i {
-        font-size: 1.3vh;
+        font-size: 1vh;
     }
 
     #nomeDesc {
-        width: 18vw;
+        width: 20vw;
         padding-right: 2vw;
         height: 20vh;
 
@@ -273,8 +273,8 @@ h1 {
     }
 
     #foto {
-        width: 20vw;
-        height: 12.5vh;
+        width: 17vw;
+        height: 10vh;
     }
 
     #addCarrinho {
