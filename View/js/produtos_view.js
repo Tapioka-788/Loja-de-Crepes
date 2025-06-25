@@ -38,7 +38,7 @@ export async function criarCartoes() {
 
         const img = document.createElement("img");
         img.id = "foto";
-        img.src = "./../../Model/" + produtos[i].imgSrc + ".jpeg";
+        img.src = "./../../Model/" + produtos[i].imgSrc;
         img.alt = produtos[i].nome;
 
         imgCartao.appendChild(img);
