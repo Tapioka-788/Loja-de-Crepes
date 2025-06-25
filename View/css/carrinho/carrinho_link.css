@@ -13,3 +13,7 @@ body{
 
     overflow: hidden;
 }
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
