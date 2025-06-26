@@ -3,7 +3,7 @@
 }
 
 #comprovante h1 {
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 #comprovante button,
@@ -118,7 +118,7 @@ i {
 
 @media screen and
 /* (min-width: 300px), */
-(max-width: 500px) {
+(max-width: 900px) {
 
     #comprovante {
         width: 100vw;
@@ -150,7 +150,7 @@ i {
     }
 
     #btnComprovante {
-        width: 17vw;
+        width: 20vw;
         height: 5vh;
 
         -webkit-border-radius: 1vw;

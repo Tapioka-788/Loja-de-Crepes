@@ -110,7 +110,7 @@ i {
 
 @media screen and
 /* (min-width: 300px), */
-(max-width: 500px) {
+(max-width: 900px) {
 
     #pagamento {
         width: 100vw;
@@ -147,7 +147,7 @@ i {
     }
 
     #btnPagamento {
-        width: 17vw;
+        width: 20vw;
         height: 5vh;
 
         -webkit-border-radius: 1vw;

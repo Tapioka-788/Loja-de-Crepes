@@ -65,6 +65,7 @@ export async function criarCarrinho() {
 
         const titulo = document.createElement("h1");
         titulo.textContent = produto.nome;
+        titulo.id = "titulo";
 
         const descricao = document.createElement("p");
         descricao.textContent = produto.descricao;

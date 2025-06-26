@@ -1,8 +1,9 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
 section h1 {
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 
 section button,
@@ -179,10 +180,26 @@ h1 {
 
 @media screen and
 /* (min-width: 300px), */
-(max-width: 500px) {
+(max-width: 900px) {
 
     section {
         width: 100vw;
+    }
+
+    section h1 {
+        font-size: 2vw;
+    }
+
+    #titulo {
+        width: 18vw;
+        font-size: 2.5vw;
+        text-align: center;
+    }
+
+    section button,
+    p,
+    i {
+        font-size: 1vh;
     }
 
     #sectionCartoes {
@@ -207,6 +224,7 @@ h1 {
         align-items: center;
         padding: 1vw;
         width: 80vw;
+        font-size: 3vw;
     }
 
     .cartao {
@@ -229,16 +247,6 @@ h1 {
 
         padding-left: 1vw;
         padding-bottom: 1vh;
-    }
-
-    section h1 {
-        font-size: 3vw;
-    }
-
-    section button,
-    p,
-    i {
-        font-size: 1vh;
     }
 
     #nomeDesc {

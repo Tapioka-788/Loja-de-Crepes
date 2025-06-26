@@ -1,6 +1,7 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
 section {
     width: 100vw;
     height: 85vh;
@@ -54,7 +55,13 @@ section {
 }
 
 #banner1 {
-    background-color: red;
+    background-image: url('../../../Model/francalado.jpeg');
+    background-size: cover;
+    /* Para preencher o espaço */
+    background-position: center;
+    /* Para centralizar */
+    background-repeat: no-repeat;
+    /* Para não repetir a imagem */
 }
 
 #banner2 {
@@ -235,7 +242,7 @@ section {
 
 @media screen and
 /* (min-width: 300px), */
-(max-width: 500px) {
+(max-width: 900px) {
 
     section {
         width: 100vw;
@@ -247,6 +254,11 @@ section {
 
     #banners {
         height: 50vh;
+    }
+
+
+    #banner1 {
+        background-image: url('../../../Model/francaPe.jpeg');
     }
 
     #login {
