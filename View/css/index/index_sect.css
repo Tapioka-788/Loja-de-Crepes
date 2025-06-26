@@ -235,7 +235,7 @@ section {
 
 @media screen and
 /* (min-width: 300px), */
-(max-width: 480px) {
+(max-width: 500px) {
 
     section {
         width: 100vw;
