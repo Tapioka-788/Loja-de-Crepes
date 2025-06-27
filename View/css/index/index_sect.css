@@ -50,12 +50,6 @@ section {
 
     margin: 0vh 15vw;
 
-    /* Adicionando fundo padrão para evitar banners sem cor */
-    background-color: gray;
-}
-
-#banner1 {
-    background-image: url('../../../Model/francalado.jpeg');
     background-size: cover;
     /* Para preencher o espaço */
     background-position: center;
@@ -64,12 +58,16 @@ section {
     /* Para não repetir a imagem */
 }
 
+#banner1 {
+    background-image: url('../../../Model/francalado.jpeg');
+}
+
 #banner2 {
-    background-color: yellow;
+    background-image: url('../../../Model/fullstacklado.png');
 }
 
 #banner3 {
-    background-color: blue;
+    background-image: url('../../../Model/docelado.png');
 }
 
 #banner4 {
@@ -261,6 +259,18 @@ section {
         background-image: url('../../../Model/francaPe.jpeg');
     }
 
+    #banner2 {
+        background-image: url('../../../Model/fullStackpe.png');
+    }
+    
+    #banner3 {
+       background-image: url('../../../Model/docepe.png');
+    }
+
+    #banner4 {
+        background-color: green;
+    }
+    
     #login {
         width: 100vw;
     }
