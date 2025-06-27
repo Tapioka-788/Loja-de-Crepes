@@ -1,7 +1,29 @@
 let pagamentoSect = document.getElementById("pagamento");
 let comprovante = document.getElementById("comprovante");
 
-let sectionCart = document.getElementById('sectionCart')
+let sectionCart = document.getElementById('sectionCart');
+
+// ✅ Detecta mudança no input e valida se é PDF
+const inputComprovante = document.getElementById("inputComprovante");
+const labelComprovante = document.getElementById("labelInputComprovante");
+
+inputComprovante.addEventListener("change", function () {
+    const arquivo = inputComprovante.files[0];
+
+    if (!arquivo) {
+        console.log("Nenhum arquivo selecionado.");
+        return;
+    }
+
+    if (arquivo.type === "application/pdf") {
+        console.log("PDF selecionado com sucesso:", arquivo.name);
+        labelComprovante.textContent = "Comprovante: " + arquivo.name;
+    } else {
+        alert("⚠️ Apenas arquivos PDF são aceitos!");
+        inputComprovante.value = "";
+        labelComprovante.textContent = "Selecionar Comprovante";
+    }
+});
 
 export function pagamento(numeroTela) {
     if (numeroTela == 0) {
@@ -20,7 +42,6 @@ export function pagamento(numeroTela) {
         comprovante.style.left = '-100vw';
         console.log("Fechou a tela de comprovante e salvou no bd");
 
-        // 1. Resgatar carrinho do usuário logado
         const bdProprio = JSON.parse(localStorage.getItem('bdProprio')) || [];
         const usuarioLogado = bdProprio.length > 0 ? bdProprio[0].nome : null;
 
@@ -29,15 +50,12 @@ export function pagamento(numeroTela) {
             return;
         }
 
-        // 2. Resgatar pedidos e produtos
         import("./../../Controller/services/produtos_S.js").then(async ({ pegarPedidos, pegarCartoes }) => {
             const carrinhos = await pegarPedidos();
             const produtos = await pegarCartoes();
 
-            // 3. Filtrar carrinho do usuário
             const carrinhosUsuario = carrinhos.filter(c => c.usuario.nomeUx === usuarioLogado);
 
-            // 4. Mapear os produtos do carrinho
             const produtosDoCarrinho = carrinhosUsuario.map(c => {
                 const produto = produtos.find(p => p.id === c.produtoId);
                 return produto ? {
@@ -48,13 +66,10 @@ export function pagamento(numeroTela) {
 
             const total = produtosDoCarrinho.reduce((acc, p) => acc + p.preco, 0);
 
-            // 5. Resgatar comprovante
-            const inputFile = document.getElementById("inputComprovante");
-            const arquivo = inputFile.files[0];
+            const arquivo = inputComprovante.files[0];
 
-            if (!arquivo) {
-                alert("⚠️ Nenhum comprovante foi selecionado. Por favor, envie o comprovante antes de concluir o pagamento.");
-                console.warn("Nenhum comprovante foi selecionado.");
+            if (!arquivo || arquivo.type !== "application/pdf") {
+                alert("⚠️ Por favor, selecione um arquivo PDF válido como comprovante.");
                 return;
             }
 
@@ -85,7 +100,6 @@ export function pagamento(numeroTela) {
                     if (data.mensagem?.includes("sucesso")) {
                         alert("✅ Compra concluída e comprovante enviado!");
 
-                        // Limpar carrinho
                         for (const item of carrinhosUsuario) {
                             await fetch("https://back-end-crepes.vercel.app/usuarios", {
                                 method: "DELETE",
@@ -101,12 +115,10 @@ export function pagamento(numeroTela) {
 
                         console.log("Carrinho do usuário foi limpo.");
 
-                        // Recriar os cartões do carrinho
                         import("./../../View/js/carrinho_view.js").then(({ criarCarrinho }) => {
-                            criarCarrinho(); // Atualiza visualmente o carrinho
+                            criarCarrinho();
                         });
 
-                        // Opcional: recarregar a página após 2 segundos
                         setTimeout(() => {
                             location.reload();
                         }, 2000);
@@ -126,7 +138,7 @@ export function pagamento(numeroTela) {
 }
 
 export function copiarLinkPix() {
-    const linkPix = "https://seu-link-do-pix.com"; // substitua pelo link real
+    const linkPix = "https://seu-link-do-pix.com";
 
     navigator.clipboard.writeText(linkPix)
         .then(() => {

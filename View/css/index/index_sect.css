@@ -46,7 +46,7 @@ section {
 
 .banner {
     width: 70vw;
-    height: 50vh;
+    height: 55vh;
 
     margin: 0vh 15vw;
 
@@ -63,7 +63,7 @@ section {
 }
 
 #banner2 {
-    background-image: url('../../../Model/fullstacklado.png');
+    background-image: url('../../../Model/fullstacklado.jpeg');
 }
 
 #banner3 {
@@ -71,7 +71,7 @@ section {
 }
 
 #banner4 {
-    background-color: green;
+    background-image: url('../../../Model/cbApxLAdo.jpeg');
 }
 
 #btns_banners {
@@ -247,11 +247,14 @@ section {
     }
 
     .banner {
-        height: 50vh;
+        /* height: 45vh; */
+        width: 55vw;
+
+        margin: 0vh 22.5vw;
     }
 
     #banners {
-        height: 50vh;
+        height: 60vh;
     }
 
 
@@ -260,17 +263,17 @@ section {
     }
 
     #banner2 {
-        background-image: url('../../../Model/fullStackpe.png');
+        background-image: url('../../../Model/fullStackpe.jpeg');
     }
-    
+
     #banner3 {
-       background-image: url('../../../Model/docepe.png');
+        background-image: url('../../../Model/docepe.jpeg');
     }
 
     #banner4 {
-        background-color: green;
+        background-image: url('../../../Model/apaixonadope.jpeg');
     }
-    
+
     #login {
         width: 100vw;
     }
@@ -334,20 +337,39 @@ section {
         background-color: rgb(234, 29, 44);
         color: white;
     }
+}
 
-    /* 
-        <section id="login">
-        <div id="boxLogin">
-            <div id="boxInputs">
-                <input class="inputLogin" id="nomeAdd" type="text" placeholder="Nome do Aluno">
-                <input class="inputLogin" id="turmaAdd" type="text" placeholder="Numero da chamada">
-                <input class="inputLogin" id="nChamadaAdd" type="text" placeholder="Turma e curso">
-            </div>
 
-            <div id="boxBtnsLogin">
-                <button class="loginBtns" onclick="limparDadosLogin()">Limpar</button>
-                <button class="loginBtns" onclick="recolheDadosLogin()">Confirmar</button>
-            </div>
-        </div>
-    </section> */
+
+@media screen and
+/* (min-width: 300px), */
+(max-width: 500px) {
+
+    section {
+        width: 100vw;
+    }
+
+    .banner {
+        /* height: 45vh; */
+        width: 80vw;
+
+        margin: 0vh 10vw;
+    }
+
+    #banners {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .banner {
+        /* height: 45vh; */
+        width: 85vw;
+
+        margin: 0vh 7.5vw;
+    }
+
+    #banners {
+        height: 60vh;
+    }
 }
