@@ -62,7 +62,7 @@ section {
     background-image: url('../../../Model/francalado.jpeg');
 }
 
-#banner2 {
+#banner4 {
     background-image: url('../../../Model/fullstacklado.jpeg');
 }
 
@@ -70,8 +70,11 @@ section {
     background-image: url('../../../Model/docelado.png');
 }
 
-#banner4 {
-    background-image: url('../../../Model/cbApxLAdo.jpeg');
+#banner2 {
+    background-image: url('../../../Model/lado.jpeg');
+    width: 45vw;
+
+    margin: 0vh 27.5vw;
 }
 
 #btns_banners {
@@ -88,7 +91,7 @@ section {
     align-items: center;
 
     position: absolute;
-    top: 70vh;
+    top: 75vh;
 
     z-index: 2;
 }
@@ -262,7 +265,7 @@ section {
         background-image: url('../../../Model/francaPe.jpeg');
     }
 
-    #banner2 {
+    #banner4 {
         background-image: url('../../../Model/fullStackpe.jpeg');
     }
 
@@ -270,8 +273,12 @@ section {
         background-image: url('../../../Model/docepe.jpeg');
     }
 
-    #banner4 {
-        background-image: url('../../../Model/apaixonadope.jpeg');
+    #banner2 {
+        background-image: url('../../../Model/pe.png');
+        width: 60vw;
+        height: 58vh;
+
+        margin: 0vh 20vw;
     }
 
     #login {
@@ -358,6 +365,14 @@ section {
 
     #banners {
         height: 60vh;
+    }
+
+    #banner2 {
+        background-image: url('../../../Model/pe.png');
+        width: 95vw;
+        height: 59vh;
+
+        margin: 0vh 2.5vw;
     }
 }
 
