@@ -21,7 +21,7 @@ function trocarImagensParaMobile() {
         document.getElementById("img1").src = "./../../Model/francaPe.jpeg";
         document.getElementById("img2").src = "./../../Model/pe.png";
         document.getElementById("img3").src = "./../../Model/fullStackpe.jpeg";
-        document.getElementById("img4").src = "./../../Model/docepe.jpeg";
+        // document.getElementById("img4").src = "./../../Model/docepe.jpeg";
     }
 }
 

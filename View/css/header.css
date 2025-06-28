@@ -1,6 +1,7 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
 header {
     width: 100vw;
 
@@ -139,5 +140,15 @@ header,
     .btnsHead i {
         font-size: 5vw;
 
+    }
+}
+
+@media screen and
+/* (min-width: 300px), */
+(max-width: 369px) {
+    #logo {
+        h1 {
+            display: none;
+        }
     }
 }

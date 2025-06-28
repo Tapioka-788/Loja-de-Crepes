@@ -138,7 +138,7 @@ export function pagamento(numeroTela) {
 }
 
 export function copiarLinkPix() {
-    const linkPix = "https://seu-link-do-pix.com";
+    const linkPix = "00020126550014br.gov.bcb.pix0114+55469994159280215Sarau literario5204000053039865802BR5925ISABELA ACCORSI FERNANDES6010MARMELEIRO62180514Sarauliterario63044018";
 
     navigator.clipboard.writeText(linkPix)
         .then(() => {
